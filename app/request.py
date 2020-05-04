@@ -64,3 +64,20 @@ def get_articles(category):
             articles_results = process_articles(articles_results_list)
     
     return articles_results
+
+def process_articles(articles_list):
+    articles_results = []
+    for article_item in articles_list:
+        author = article_item.get("author")
+        title = article_item.get("title")
+        description = article_item.get("description")
+        url = article_item.get("url")
+        urlToImage = article_item.get("urlToImage")
+        publishedAt = article_item.get("publishedAt")
+        content = article_item.get("content")
+
+        # if urlToImage:
+        articles_object = Articles(author, title, description, url, urlToImage, publishedAt, content)
+        articles_results.append(articles_object)
+    
+    return articles_results
