@@ -1,0 +1,1 @@
+NEWS_API_URL = "03b1d1f0f0f04515bf791cbb3ce31b4a"
