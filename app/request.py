@@ -28,3 +28,22 @@ def get_sources(category):
             news_results = process_results(news_results_list)
     
     return news_results
+
+def process_results(news_list):
+
+    news_results = []
+
+    for news_item in news_list:
+        id = news_item.get('id')
+        name=news_item.get("name")
+        description=news_item.get("description")
+        url=news_item.get("url")
+        category=news_item.get("category")
+        language=news_item.get("language")
+        country=news_item.get("country")
+
+        if language == 'en':
+            news_object = News(id,name,description,url,category,language,country)
+            news_results.append(news_object)
+    
+    return news_results
